@@ -1,0 +1,31 @@
+name: Build and test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install native dependencies
+        run: sudo apt-get update && sudo apt-get install -y libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev
+      - name: Build desktop and test C++ engine
+        run: |
+          cmake -S . -B build/cmake -DCMAKE_BUILD_TYPE=Debug
+          cmake --build build/cmake --parallel 2
+          ctest --test-dir build/cmake --output-on-failure
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: '4.0.15'
+      - name: Build and test WebAssembly
+        run: |
+          bash scripts/build-web.sh
+          node tests/web-core.mjs
+          npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pocket-partner-web
+          path: dist/
