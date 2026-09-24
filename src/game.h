@@ -4,7 +4,7 @@
 namespace vb {
 constexpr int Families=79;
 enum Type { Normal,Grass,Fire,Water,Electric,Bug,Flying,Psychic,Ghost,Poison,Ground,Rock,Fighting,Ice,Dragon };
-struct Species { int id; const char* name; Type type; int next; int stage; int family; };
+struct Species { int id; const char* name; Type type; int next; int stage; int family; int evolutionLevel; };
 extern const Species species[151];
 extern const int speciesCount;
 const Species& dex(int id);
@@ -24,6 +24,7 @@ struct Game {
     int unlockAt(int family) const;
     int nextId(int branch=0) const;
     int neededXp() const;
+    int neededLevel() const;
     int neededSeconds() const;
     bool ready() const;
     int level() const;

@@ -1,8 +1,18 @@
 # Release verification
 
+## v1.1 evolution update
+
+- All 70 evolving species passed tests immediately below and at their level and cumulative time requirements. All 79 families share one 72-hour full-chain timeline per partner, including hatching; three-form families have a 36-hour intermediate milestone. Late evolution and older saves preserve cumulative time and earned levels.
+- Native C++ regression tests completed 1,580 simulated battles. A separate local progression check earned its XP through 1,467 completed battles (1,465 wins, 2 losses), reached all 151 forms and 72 evolution branches, and checked all four routes. Time was simulated for testing; no accelerated play mode is shipped.
+- The actual WebAssembly build rejected below-level and below-time saves, evolved Charmander at level 16 / 36 total hours, preserved its level and clock, and accepted a converted Eevee branch at level 36 / 72 hours.
+- Local browser UI at `localhost:4178`: imported a level-15 fixture and verified disabled evolution; imported level 16 / 36 hours, clicked Evolve, and verified Charmeleon with 36 / 72 hours and level 16 / 36 toward Charizard. Desktop and 390-pixel phone viewport screenshots inspected; no horizontal overflow or relevant console errors observed.
+- Windows native rendering/resource/save smoke test passed with 151 sprites. Its new total-hours and evolution-level indicators were visually inspected. Sprite provenance and JavaScript syntax checks passed.
+
+The progression check does not represent 72 real elapsed hours of manual play. Physical-phone installation remains untested. Earlier broader release checks are recorded below.
+
 ## Tested locally
 
-- C++17 engine compiled and its regression suite passed: egg/clock gating; 30-second hatching; 72-hour evolution boundary; battle XP gating; care-independent evolution; sleeping, paused and suspended timers; evolution counter resets; all three Eevee branches; invalid action rejection; deterministic battle rewards; malformed-save rejection; save round trips; **1,580 complete simulated battles** over all 79 partner families and four routes.
+- C++17 engine compiled and its regression suite passed: egg/clock gating; 30-second hatching; cumulative evolution boundaries; level gating; care-independent evolution; sleeping, paused and suspended timers; all three Eevee branches; invalid action rejection; deterministic battle rewards; malformed-save rejection; save round trips; **1,580 complete simulated battles** over all 79 partner families and four routes.
 - Actual Emscripten WebAssembly build passed timer, hatch, sleep/pause, invalid-import and **native-to-WebAssembly save compatibility** checks.
 - Windows x64 native app linked statically, created its OpenGL window, loaded all **151 sprites**, rendered and saved successfully. Native screenshot inspected, including Windows high-DPI rendering.
 - Browser UI: chose a starter, set clock, hatched in real elapsed time, trained, completed a battle using type burst/guard/tackle, received XP, and imported a native save through the file picker. Used a prepared 72-hour test fixture to check Eevee choice and evolution reveal; this did not require waiting 72 real hours.

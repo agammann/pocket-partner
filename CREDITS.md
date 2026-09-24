@@ -28,3 +28,5 @@ Tamaweb and Digital Monster Web informed the virtual-pet concept. Pokémon games
 ## Species data
 
 Original-151 names, family relationships and primary types were derived from [PokeAPI](https://github.com/PokeAPI/pokeapi), revision `2b9ea590fcc62a1bce2534835e9d5d1b234a2976`. Later-generation relatives and types are excluded. Pidgey uses Flying as its single battle type. The checked-in roster and provenance are in `assets/roster.json`.
+
+Evolution levels for ordinary original-151 forms follow the [Pokémon Database evolution chart](https://pokemondb.net/evolution#evo-g1), checked September 23, 2026. Former stone/trade routes use the custom level-36 rule; the 36/72-hour milestones and XP curve are Vibe Beasts rules. See [the evolution table](docs/evolution.md).

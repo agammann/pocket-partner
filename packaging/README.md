@@ -8,7 +8,7 @@ Created and published by agammann.
 
 Choose an egg and select **Set clock & hatch**. Your egg hatches in 30 active seconds. Feed, clean, play and train, then visit Battle.
 
-Each evolution needs **72 awake, active hours** and battle XP. Sleep, pause, an unfocused window and a closed game stop the timer. Care never blocks evolution. First evolution needs 60 XP, the next 160; Caterpie needs 20 and 40. Wins earn 20–50 XP, completed losses earn 8, and retreating earns none.
+One partner’s full chain takes **72 total awake, active hours**, including hatching, when battle-earned levels are met. Three-form families evolve at 36 and 72 hours; two-form families at 72. Each evolution shows its required level; former stone/trade routes use level 36. Sleep, pause, an unfocused window and a closed game stop the timer. Care never blocks evolution. Evolving keeps total awake time and level. Wins earn 20–50 XP, completed losses earn 8, and retreating earns none. Level 5 is the starting level; every 20 lifetime XP adds a level.
 
 Use Tackle to restore focus, a type burst for a strong attack, Guard to soften the next hit, and one berry per battle to recover HP. Partners heal after battles.
 

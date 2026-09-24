@@ -27,9 +27,11 @@ The source-code ZIP is for rebuilding; choose **Vibe-Beasts-Windows.zip** for th
 
 ## Evolution: time together, plus battles
 
-Every evolution stage needs **72 hours of awake, active time**. The timer runs only for your selected, hatched partner while the game is open and active. It stops during sleep, manual pause, hidden browser tabs, unfocused desktop windows, suspended devices and closed games. Time spent offline with the installed game **open and active** counts normally; time with the game closed does not.
+One partner’s **full evolution chain takes 72 total hours of awake, active play**, including its 30-second hatch, provided its battle-earned level meets each requirement. Three-form families have milestones at **36 and 72 total hours**; two-form families evolve at **72 hours**. The timer runs only for your selected, hatched partner while the game is open and active. Hatching also counts toward the total. It stops during sleep, manual pause, hidden browser tabs, unfocused desktop windows, suspended devices and closed games. Time spent offline with the installed game **open and active** counts normally; time with the game closed does not.
 
-First-stage evolution needs **60 battle XP**; the next stage needs **160 battle XP**. Caterpie’s stages need 20 and 40 XP. Wins give 20/30/40/50 XP depending on the route. Each evolution starts a new 72-hour stage timer and stage XP counter. Excess stage XP does not carry over, but lifetime XP and level remain.
+Level evolutions use the [Gen 1 chart levels](https://pokemondb.net/evolution#evo-g1). All former stone and trade evolutions instead require **level 36**, with no items, trading or happiness checks. Eevee offers Vaporeon, Jolteon or Flareon at that same milestone. See the [complete evolution table](docs/evolution.md).
+
+Partners start at level 5 and gain one level per 20 lifetime battle XP, up to level 100. Wins give 20/30/40/50 XP depending on the route; completed losses give 8. **Evolution preserves total awake time, lifetime XP and level**. There is no additional 72-hour wait after evolving. If you reach a time milestone before its level, keep battling; evolution remains voluntary.
 
 Care meters never block or change evolution. There is no death or punishment for leaving. Your partner will wait. Evolution is voluntary and can be delayed indefinitely. Branch choices are permanent within a save.
 
