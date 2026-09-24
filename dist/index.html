@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#174b41"><meta name="description" content="A little partner. A long adventure. Hatch, train, battle and evolve in a free retro Pokémon virtual pet."><title>Pocket Partner</title><link rel="icon" href="assets/025.png"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><a class="brand" href="./"><span class="brandmark">pp.</span><span>POCKET PARTNER<small>A LITTLE PARTNER. A LONG ADVENTURE.</small></span></a><div class="topright"><span id="save-status">Starting up…</span><button class="quiet" id="install" hidden>Install game ↗</button><a class="quiet" href="https://github.com/agammann/pocket-partner" target="_blank" rel="noopener">GitHub ↗</a></div></header>
+<main><div class="intro"><div><span class="eyebrow">YOUR OWN LITTLE ADVENTURE</span><h1>A good day to grow.</h1></div><div class="clock"><span id="clock">--:--</span><small>LOCAL TIME</small></div></div>
+<nav aria-label="Game screens"><button data-tab="home" class="selected">01 <span>Partner</span></button><button data-tab="battle">02 <span>Battle</span></button><button data-tab="collection">03 <span>Field guide</span></button><button data-tab="settings">04 <span>Game & saves</span></button></nav>
+<div id="loading" role="status">Waking up the game engine…</div><section id="content" aria-live="off"></section>
+<div id="notice" role="status" aria-live="polite"></div>
+<footer><span>POCKET PARTNER <b>v1.0</b> · BY AGAMMANN</span><span>Unofficial Pokémon fan game · <button id="credits" class="textlink">Credits & help</button></span></footer></main>
+<dialog id="dialog"><button class="close" aria-label="Close dialog">×</button><div id="dialog-body"></div></dialog>
+<script type="module" src="app.js"></script></body></html>

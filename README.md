@@ -1,0 +1,65 @@
+# Pocket Partner
+
+A little partner. A long adventure.
+
+A free, unofficial Pokémon virtual pet by **agammann**, with original Pokémon Yellow sprites, short turn-based battles, and a C++ game engine shared by the browser and Windows versions.
+
+**[Play in your browser](https://pocket-partner.alx21.chatgpt.site)** · **[Download for Windows](https://github.com/agammann/pocket-partner/releases/latest/download/Pocket-Partner-Windows.zip)** · [Build from source](BUILD.md)
+
+![Pocket Partner Windows edition](docs/windows-preview.png)
+
+## Play
+
+**Computer or phone:** open the browser game. Use a mouse, touch, or Tab and Enter. In **Game & saves**, wait for “Offline files downloaded” before disconnecting. Install from your browser’s app menu; on iPhone use Safari → Share → Add to Home Screen. Browser support varies. The Windows download is the independent offline option.
+
+**Windows 10/11, 64-bit:** download the release ZIP, extract the entire folder, and double-click **Play.cmd**. No compiler, account or internet connection is needed. Optional: **Install.cmd** copies the app into your local application folder, creates a desktop shortcut and launches it. The installer needs no administrator access. Release executables are unsigned; Windows may show its normal download/reputation prompt.
+
+The source-code ZIP is for rebuilding; choose **Pocket-Partner-Windows.zip** for the ready-to-play game.
+
+## Your first adventure
+
+1. Choose a Bulbasaur, Charmander, Squirtle, Pikachu or Eevee egg.
+2. Select **Set clock & hatch**. Your egg hatches after **30 awake, active seconds**.
+3. Feed, clean and play with your partner. Train up to ten times for extra battle strength.
+4. Visit **Battle** and start in Clover Meadow. Tackle restores focus; type bursts spend it. Guard reduces damage and restores focus. One healing berry is available per battle.
+5. Win to unlock routes and more partner families. Every completed loss still awards 8 XP; retreating awards none. Partners heal after battles.
+6. When both evolution requirements are met, choose **Evolve**. Eevee offers Vaporeon, Jolteon or Flareon.
+
+## Evolution: time together, plus battles
+
+Every evolution stage needs **72 hours of awake, active time**. The timer runs only for your selected, hatched partner while the game is open and active. It stops during sleep, manual pause, hidden browser tabs, unfocused desktop windows, suspended devices and closed games. Time spent offline with the installed game **open and active** counts normally; time with the game closed does not.
+
+First-stage evolution needs **60 battle XP**; the next stage needs **160 battle XP**. Caterpie’s stages need 20 and 40 XP. Wins give 20/30/40/50 XP depending on the route. Each evolution starts a new 72-hour stage timer and stage XP counter. Excess stage XP does not carry over, but lifetime XP and level remain.
+
+Care meters never block or change evolution. There is no death or punishment for leaving. Your partner will wait. Evolution is voluntary and can be delayed indefinitely. Branch choices are permanent within a save.
+
+These are custom fan-game rules, not a simulation of any official Pokémon game. Battles use a simplified single-type chart. This release contains **10 playable families and 32 discoverable species**, including three opponent-only Pokémon (Weedle, Kakuna and Beedrill); it is not a complete 151-species game. Kakuna is discovered in the Grove.
+
+| Partner family | Wins to unlock |
+| --- | ---: |
+| Bulbasaur, Charmander, Squirtle, Pikachu, Eevee | 0 |
+| Caterpie | 2 |
+| Pidgey | 4 |
+| Magikarp | 7 |
+| Abra | 10 |
+| Gastly | 14 |
+
+## Saves
+
+The browser saves to this browser’s local storage. Windows saves to `%LOCALAPPDATA%\PocketPartner\partner.save`. Saves include active battles. There are no accounts or automatic cloud synchronization.
+
+Use **Game & saves → Export save** to make a backup or move between editions. In the browser, **Import save** selects a `.save` file and asks before replacing progress. On Windows, export writes `Pocket-Partner-export.save` beside the executable; drag a `.save` file onto the window to import, then confirm. The save format is shared across both builds.
+
+Clearing browser data can erase your browser save and offline files. Keep exported backups. Like other local single-player games, saves are editable and are not intended for competitive rankings.
+
+## Source & credits
+
+The rules, timers, battles, evolution, save validation and Windows renderer are C++17. The web build uses Emscripten WebAssembly with an HTML/CSS/JavaScript interface for responsive, keyboard-accessible controls. The Windows renderer uses raylib 5.5. Build scripts and CI are included; see [BUILD.md](BUILD.md) and [verification notes](VERIFIED.md).
+
+Pokémon Yellow sprites are archived by **[The RBY Sprites Project](https://github.com/ShiraTheMogul/rby-sprites-project)** (Plague von Karma). The images are bundled locally for offline play; original paths, hashes and the source revision are recorded in [the asset manifest](assets/sprites-manifest.json). See [CREDITS.md](CREDITS.md) for attribution and third-party terms.
+
+Pokémon names and artwork belong to their respective rights holders. This is an unofficial fan project, with no affiliation or endorsement. Source-code permissions do not grant rights to Pokémon artwork or trademarks. No Tamaweb or DMWeb code or artwork is included.
+
+## Removing the Windows app
+
+The portable edition can be removed by deleting its extracted folder. For an installed copy, remove `%LOCALAPPDATA%\PocketPartner\app` and the **Pocket Partner** desktop shortcut. Your save remains in `%LOCALAPPDATA%\PocketPartner`; remove that folder only if you also want to erase progress.

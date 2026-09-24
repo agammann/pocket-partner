@@ -1,0 +1,8 @@
+build/
+tools/
+.sites-runtime/
+*.save
+*.tmp
+node_modules/
+.DS_Store
+native-preview.png
