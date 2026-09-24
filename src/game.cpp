@@ -4,24 +4,15 @@
 #include <sstream>
 #include <iomanip>
 #include <limits>
-namespace pp {
+namespace vb {
 const Species species[]={
-{1,"Bulbasaur",Grass,2,0,0},{2,"Ivysaur",Grass,3,1,0},{3,"Venusaur",Grass,0,2,0},
-{4,"Charmander",Fire,5,0,1},{5,"Charmeleon",Fire,6,1,1},{6,"Charizard",Fire,0,2,1},
-{7,"Squirtle",Water,8,0,2},{8,"Wartortle",Water,9,1,2},{9,"Blastoise",Water,0,2,2},
-{25,"Pikachu",Electric,26,0,3},{26,"Raichu",Electric,0,1,3},
-{133,"Eevee",Normal,134,0,4},{134,"Vaporeon",Water,0,1,4},{135,"Jolteon",Electric,0,1,4},{136,"Flareon",Fire,0,1,4},
-{10,"Caterpie",Bug,11,0,5},{11,"Metapod",Bug,12,1,5},{12,"Butterfree",Bug,0,2,5},
-{16,"Pidgey",Flying,17,0,6},{17,"Pidgeotto",Flying,18,1,6},{18,"Pidgeot",Flying,0,2,6},
-{129,"Magikarp",Water,130,0,7},{130,"Gyarados",Water,0,1,7},
-{63,"Abra",Psychic,64,0,8},{64,"Kadabra",Psychic,65,1,8},{65,"Alakazam",Psychic,0,2,8},
-{92,"Gastly",Ghost,93,0,9},{93,"Haunter",Ghost,94,1,9},{94,"Gengar",Ghost,0,2,9},
-{13,"Weedle",Bug,0,0,-1},{14,"Kakuna",Bug,0,1,-1},{15,"Beedrill",Bug,0,2,-1}};
+#include "roster.inc"
+};
 const int speciesCount=sizeof(species)/sizeof(species[0]);
 const Species& dex(int id) { for(auto& s:species) if(s.id==id)return s; return species[0]; }
-const char* typeName(int t) { static const char* names[]={"Normal","Grass","Fire","Water","Electric","Bug","Flying","Psychic","Ghost"}; return names[std::clamp(t,0,8)]; }
-static const int roots[]={1,4,7,25,133,10,16,129,63,92};
-int Game::unlockAt(int f)const { static const int gates[]={0,0,0,0,0,2,4,7,10,14}; return f>=0&&f<Families?gates[f]:999; }
+const char* typeName(int t) { static const char* names[]={"Normal","Grass","Fire","Water","Electric","Bug","Flying","Psychic","Ghost","Poison","Ground","Rock","Fighting","Ice","Dragon"}; return names[std::clamp(t,0,14)]; }
+static const int roots[]={1,4,7,25,133,10,16,129,63,92,13,19,21,23,27,29,32,35,37,39,41,43,46,48,50,52,54,56,58,60,66,69,72,74,77,79,81,83,84,86,88,90,95,96,98,100,102,104,106,107,108,109,111,113,114,115,116,118,120,122,123,124,125,126,127,128,131,132,137,138,140,142,143,144,145,146,147,150,151};
+int Game::unlockAt(int f)const { static const int gates[]={0,0,0,0,0,2,4,7,10,14}; if(f<0||f>=Families)return 999;if(f<10)return gates[f];return 2+(f-10)/3; }
 Game::Game(){ for(int i=0;i<Families;i++) pets[i].id=roots[i]; }
 int Game::random(int n){rng^=rng<<13;rng^=rng>>17;rng^=rng<<5;return int(rng%uint32_t(n));}
 void Game::tick(double now){
@@ -51,8 +42,8 @@ float effectiveness(int a,int d){
 }
 bool Game::encounter(int z){
     static const int gates[]={0,3,8,15}; if(z<0||z>3||wins<gates[z]||battle.active||pet().hatch<30||!pet().owned||sleeping||paused)return false;
-    static const int enemies[][6]={{10,13,16,25,129,133},{2,5,8,14,64,93},{3,6,9,15,65,94},{130,134,135,136,94,6}};
-    battle=Battle{};battle.active=1;battle.zone=z;battle.enemy=enemies[z][random(6)];battle.maxHp=maximumHp();battle.hp=battle.maxHp;
+    int enemies[151],count=0;for(auto& s:species)if(z==3||(z==0&&s.stage==0&&s.id<129)||(z==1&&s.stage<=1&&s.id<144)||(z==2&&s.stage>0))enemies[count++]=s.id;
+    battle=Battle{};battle.active=1;battle.zone=z;battle.enemy=enemies[random(count)];battle.maxHp=maximumHp();battle.hp=battle.maxHp;
     battle.enemyMax=48+z*30+level()*2;battle.enemyHp=battle.enemyMax;seen[battle.enemy]=1;
     message=std::string("A wild ")+dex(battle.enemy).name+" appeared. Choose your move!";return true;
 }
@@ -72,17 +63,17 @@ bool Game::move(int a){
     message=result;return true;
 }
 std::string Game::save()const{
-    std::ostringstream o;o<<std::setprecision(17)<<"POCKET_PARTNER 1\n"<<selected<<' '<<wins<<' '<<losses<<' '<<rng<<' '<<lastTime<<' '<<clockSet<<' '<<sleeping<<' '<<paused<<'\n';
+    std::ostringstream o;o<<std::setprecision(17)<<"VIBE_BEASTS 2\n"<<selected<<' '<<wins<<' '<<losses<<' '<<rng<<' '<<lastTime<<' '<<clockSet<<' '<<sleeping<<' '<<paused<<'\n';
     for(auto& p:pets)o<<p.id<<' '<<p.xp<<' '<<p.stageXp<<' '<<p.training<<' '<<p.age<<' '<<p.stageAge<<' '<<p.food<<' '<<p.joy<<' '<<p.clean<<' '<<p.owned<<' '<<p.hatch<<'\n';
     for(int i:seen)o<<i<<' ';o<<'\n';auto& b=battle;o<<b.active<<' '<<b.enemy<<' '<<b.hp<<' '<<b.maxHp<<' '<<b.enemyHp<<' '<<b.enemyMax<<' '<<b.focus<<' '<<b.potion<<' '<<b.zone<<' '<<b.turn<<'\n';return o.str();
 }
 bool Game::load(const std::string& text){
     if(text.size()>16000)return false;Game g;std::istringstream in(text);std::string magic;int version;
-    if(!(in>>magic>>version)||magic!="POCKET_PARTNER"||version!=1)return false;
+    if(!(in>>magic>>version))return false;const bool legacy=magic=="POCKET" "_PARTNER"&&version==1;if(!legacy&&(magic!="VIBE_BEASTS"||version!=2))return false;
     if(!(in>>g.selected>>g.wins>>g.losses>>g.rng>>g.lastTime>>g.clockSet>>g.sleeping>>g.paused))return false;
     if(g.clockSet<0||g.clockSet>1||g.sleeping<0||g.sleeping>1||g.paused<0||g.paused>1)return false;
     if(g.selected<0||g.selected>=Families||g.wins<0||g.wins>100000||g.losses<0||g.losses>100000||!g.rng||!std::isfinite(g.lastTime)||g.lastTime<0||g.lastTime>4102444800.)return false;
-    for(int i=0;i<Families;i++){auto& p=g.pets[i];if(!(in>>p.id>>p.xp>>p.stageXp>>p.training>>p.age>>p.stageAge>>p.food>>p.joy>>p.clean>>p.owned>>p.hatch))return false;
+    for(int i=0;i<(legacy?10:Families);i++){auto& p=g.pets[i];if(!(in>>p.id>>p.xp>>p.stageXp>>p.training>>p.age>>p.stageAge>>p.food>>p.joy>>p.clean>>p.owned>>p.hatch))return false;
         if(dex(p.id).id!=p.id||dex(p.id).family!=i||p.xp<0||p.xp>100000||p.stageXp<0||p.stageXp>p.xp||p.training<0||p.training>10)return false;
         for(double v:{p.age,p.stageAge,p.food,p.joy,p.clean,p.hatch})if(!std::isfinite(v)||v<0)return false;
         if(p.owned<0||p.owned>1||p.hatch>30)return false;
@@ -97,15 +88,15 @@ bool Game::load(const std::string& text){
     in>>std::ws;if(!in.eof())return false;g.lastTime=0;g.message=b.active?"Battle resumed. Choose your next move.":"Welcome back. Your partner missed you!";*this=g;return true;
 }
 }
-static pp::Game globalGame;
+static vb::Game globalGame;
 extern "C" {
-int pp_get(int k){auto&g=globalGame;auto&p=g.pet();auto&b=g.battle;switch(k){case 0:return p.id;case 1:return g.selected;case 2:return g.wins;case 3:return g.losses;case 4:return g.level();case 5:return p.xp;case 6:return p.stageXp;case 7:return int(p.stageAge);case 8:return g.neededXp();case 9:return g.neededSeconds();case 10:return g.ready();case 11:return int(p.food);case 12:return int(p.joy);case 13:return int(p.clean);case 14:return p.training;case 15:return p.owned;case 16:return b.active;case 17:return b.enemy;case 18:return b.hp;case 19:return b.maxHp;case 20:return b.enemyHp;case 21:return b.enemyMax;case 22:return b.focus;case 23:return b.potion;case 24:return b.zone;case 25:return int(p.age);case 26:return g.nextId();case 27:return pp::dex(p.id).type;case 28:return pp::speciesCount;case 29:return b.turn;case 30:return int(p.hatch);case 31:return g.sleeping;case 32:return g.paused;case 33:return g.clockSet;default:return 0;}}
-int pp_pet(int f,int field){if(f<0||f>=pp::Families)return 0;auto&g=globalGame;switch(field){case 0:return g.pets[f].id;case 1:return g.wins>=g.unlockAt(f);case 2:return g.unlockAt(f);case 3:return g.seen[g.pets[f].id];default:return 0;}}
-int pp_species(int i,int f){if(i<0||i>=pp::speciesCount)return 0;const auto&s=pp::species[i];switch(f){case 0:return s.id;case 1:return s.type;case 2:return globalGame.seen[s.id];case 3:return s.family;default:return 0;}}
-const char* pp_name(int id){return pp::dex(id).name;}
-const char* pp_message(){return globalGame.message.c_str();}
-void pp_tick(double now){globalGame.tick(now);}
-int pp_action(int a,int x){switch(a){case 0:return globalGame.choose(x);case 1:return globalGame.care(x);case 2:return globalGame.encounter(x);case 3:return globalGame.move(x);case 4:return globalGame.evolve(x);case 5:globalGame.clockSet=1;globalGame.message="Clock set. Your egg will hatch in 30 awake seconds.";return 1;case 6:if(globalGame.battle.active)return 0;globalGame.sleeping=!globalGame.sleeping;globalGame.message=globalGame.sleeping?"Goodnight. Evolution time is resting too.":"Good morning! Awake time is counting again.";return 1;case 7:globalGame.paused=x?1:0;return 1;default:return 0;}}
-const char* pp_save(){static std::string s;s=globalGame.save();return s.c_str();}
-int pp_load(const char* s){return s&&globalGame.load(s);}
+int vb_get(int k){auto&g=globalGame;auto&p=g.pet();auto&b=g.battle;switch(k){case 0:return p.id;case 1:return g.selected;case 2:return g.wins;case 3:return g.losses;case 4:return g.level();case 5:return p.xp;case 6:return p.stageXp;case 7:return int(p.stageAge);case 8:return g.neededXp();case 9:return g.neededSeconds();case 10:return g.ready();case 11:return int(p.food);case 12:return int(p.joy);case 13:return int(p.clean);case 14:return p.training;case 15:return p.owned;case 16:return b.active;case 17:return b.enemy;case 18:return b.hp;case 19:return b.maxHp;case 20:return b.enemyHp;case 21:return b.enemyMax;case 22:return b.focus;case 23:return b.potion;case 24:return b.zone;case 25:return int(p.age);case 26:return g.nextId();case 27:return vb::dex(p.id).type;case 28:return vb::speciesCount;case 29:return b.turn;case 30:return int(p.hatch);case 31:return g.sleeping;case 32:return g.paused;case 33:return g.clockSet;case 34:return vb::Families;default:return 0;}}
+int vb_pet(int f,int field){if(f<0||f>=vb::Families)return 0;auto&g=globalGame;switch(field){case 0:return g.pets[f].id;case 1:return g.wins>=g.unlockAt(f);case 2:return g.unlockAt(f);case 3:return g.seen[g.pets[f].id];case 4:return vb::roots[f];default:return 0;}}
+int vb_species(int i,int f){if(i<0||i>=vb::speciesCount)return 0;const auto&s=vb::species[i];switch(f){case 0:return s.id;case 1:return s.type;case 2:return globalGame.seen[s.id];case 3:return s.family;case 4:return s.next;default:return 0;}}
+const char* vb_name(int id){return vb::dex(id).name;}
+const char* vb_message(){return globalGame.message.c_str();}
+void vb_tick(double now){globalGame.tick(now);}
+int vb_action(int a,int x){switch(a){case 0:return globalGame.choose(x);case 1:return globalGame.care(x);case 2:return globalGame.encounter(x);case 3:return globalGame.move(x);case 4:return globalGame.evolve(x);case 5:globalGame.clockSet=1;globalGame.message="Clock set. Your egg will hatch in 30 awake seconds.";return 1;case 6:if(globalGame.battle.active)return 0;globalGame.sleeping=!globalGame.sleeping;globalGame.message=globalGame.sleeping?"Goodnight. Evolution time is resting too.":"Good morning! Awake time is counting again.";return 1;case 7:globalGame.paused=x?1:0;return 1;default:return 0;}}
+const char* vb_save(){static std::string s;s=globalGame.save();return s.c_str();}
+int vb_load(const char* s){return s&&globalGame.load(s);}
 }

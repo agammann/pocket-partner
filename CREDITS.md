@@ -10,7 +10,9 @@ https://github.com/ShiraTheMogul/rby-sprites-project
 
 Pinned source revision: `07db37f903e8697b791e017d5adae0cd66e3d3a7`.
 
-Source paths: `yellow/gen1/56x56/NNN.png`. The 32 original transparent PNGs are included without pixel changes. The upstream README permits use with repository attribution. The source manifest records the original URL, Git blob hash, SHA256, dimensions and transparency for each file.
+Source paths: `yellow/gen1/56x56/NNN.png`, with Jynx from `124-GB.png` renamed to `124.png`. The 151 original transparent PNGs are included without pixel changes. The upstream README permits use with repository attribution. The source manifest records the original URL, Git blob hash, SHA256, dimensions and transparency for each file.
+
+**Asset policy: Pokémon Yellow only.** Betamons, prototype designs, SpaceWorld sets, glitch Pokémon, and all other games' sprite sets are excluded. `node tests/assets.mjs` checks the allowed source folder, roster, file list, dimensions and every SHA256 hash.
 
 Pokémon names, characters, sprites and associated intellectual property belong to their respective rights holders, including Nintendo, Creatures and GAME FREAK. This project is not affiliated with or endorsed by them. Upstream archive permission does not resolve underlying franchise rights. The source-code license explicitly excludes third-party art, names and trademarks.
 
@@ -22,3 +24,7 @@ Pokémon names, characters, sprites and associated intellectual property belong 
 ## Inspiration
 
 Tamaweb and Digital Monster Web informed the virtual-pet concept. Pokémon games informed familiar evolution families and turn-based battle ideas. No code, interface artwork, music or sound from those games was copied. Evolution timing and battle rules here are custom.
+
+## Species data
+
+Original-151 names, family relationships and primary types were derived from [PokeAPI](https://github.com/PokeAPI/pokeapi), revision `2b9ea590fcc62a1bce2534835e9d5d1b234a2976`. Later-generation relatives and types are excluded. Pidgey uses Flying as its single battle type. The checked-in roster and provenance are in `assets/roster.json`.

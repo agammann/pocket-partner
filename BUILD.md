@@ -1,4 +1,4 @@
-# Rebuild Pocket Partner
+# Rebuild Vibe Beasts
 
 For ready-to-play downloads, see [README.md](README.md). Rebuilding requires a compiler; playing a prebuilt release does not.
 
@@ -18,14 +18,14 @@ Download the [raylib 5.5 MinGW package](https://github.com/raysan5/raylib/releas
 
 ```powershell
 .\scripts\build-windows.ps1 -Compiler 'C:\path\to\llvm-mingw\bin\clang++.exe' -Raylib 'C:\path\to\raylib-5.5_win64_mingw-w64'
-.\build\windows\PocketPartner.exe
+.\build\windows\VibeBeasts.exe
 ```
 
 The build script compiles and runs the C++ tests first, then creates `build/windows/` with the executable, all sprites, player documentation, and Play/Install launchers. It statically links the runtime and raylib.
 
 ```powershell
-.\build\windows\PocketPartner.exe --smoke-test
-.\build\windows\PocketPartner.exe --snapshot build/native-preview.png
+.\build\windows\VibeBeasts.exe --smoke-test
+.\build\windows\VibeBeasts.exe --snapshot build/native-preview.png
 ```
 
 Smoke mode uses a separate save in `build/smoke.save`, loads all sprites, renders eight frames and exits. It never uses the player’s normal save. Run these commands from the repository root; the renderer also finds sprites under `dist/assets/`.
@@ -58,6 +58,6 @@ CMake downloads raylib 5.5 on its first native configure. Linux needs raylib’s
 
 ## Publishing
 
-The public source repository is https://github.com/agammann/pocket-partner. The browser version targets ChatGPT Sites using `dist/` as its static directory. For your own deployment, replace the Site identity in `.openai/hosting.json` with your own; do not reuse this project's identity. Any static HTTPS host can serve `dist/` with `.wasm` as `application/wasm`.
+The public source repository is https://github.com/agammann/vibe-beasts. The browser version targets ChatGPT Sites using `dist/` as its static directory. For your own deployment, replace the Site identity in `.openai/hosting.json` with your own; do not reuse this project's identity. Any static HTTPS host can serve `dist/` with `.wasm` as `application/wasm`.
 
 GitHub Actions rebuilds and tests the C++ core, creates a Linux desktop build, rebuilds WebAssembly and checks the shared save fixture. Windows release packages are built separately using the script above. See [VERIFIED.md](VERIFIED.md) for the precise tested scope.

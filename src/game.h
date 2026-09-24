@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
 #include <cstdint>
-namespace pp {
-constexpr int Families=10;
-enum Type { Normal,Grass,Fire,Water,Electric,Bug,Flying,Psychic,Ghost };
+namespace vb {
+constexpr int Families=79;
+enum Type { Normal,Grass,Fire,Water,Electric,Bug,Flying,Psychic,Ghost,Poison,Ground,Rock,Fighting,Ice,Dragon };
 struct Species { int id; const char* name; Type type; int next; int stage; int family; };
-extern const Species species[32];
+extern const Species species[151];
 extern const int speciesCount;
 const Species& dex(int id);
 const char* typeName(int type);
@@ -37,13 +37,13 @@ struct Game {
 float effectiveness(int attack,int defender);
 }
 extern "C" {
-int pp_get(int key);
-int pp_pet(int family,int field);
-int pp_species(int index,int field);
-const char* pp_name(int id);
-const char* pp_message();
-void pp_tick(double now);
-int pp_action(int action,int argument);
-const char* pp_save();
-int pp_load(const char* text);
+int vb_get(int key);
+int vb_pet(int family,int field);
+int vb_species(int index,int field);
+const char* vb_name(int id);
+const char* vb_message();
+void vb_tick(double now);
+int vb_action(int action,int argument);
+const char* vb_save();
+int vb_load(const char* text);
 }

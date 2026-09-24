@@ -8,10 +8,10 @@ try {
  if($LASTEXITCODE -ne 0){throw 'Core test compilation failed'}
  & .\build\core-tests.exe
  if($LASTEXITCODE -ne 0){throw 'Core tests failed'}
- & $Compiler -std=c++17 -O2 -Wall -Wextra src/game.cpp src/desktop.cpp "-I$Raylib/include" "$Raylib/lib/libraylib.a" -lopengl32 -lgdi32 -lwinmm -static -o build/windows/PocketPartner.exe
+ & $Compiler -std=c++17 -O2 -Wall -Wextra src/game.cpp src/desktop.cpp "-I$Raylib/include" "$Raylib/lib/libraylib.a" -lopengl32 -lgdi32 -lwinmm -static -o build/windows/VibeBeasts.exe
  if($LASTEXITCODE -ne 0){throw 'Desktop build failed'}
  Copy-Item -Recurse -Force dist/assets build/windows/
- Copy-Item assets/RAYLIB-LICENSE.txt build/windows/
+ Copy-Item assets/RAYLIB-LICENSE.txt,dist/icon-192.png build/windows/
  Copy-Item packaging/Play.cmd,packaging/Install.cmd,packaging/install.ps1,packaging/README.md,CREDITS.md,LICENSE build/windows/
- Write-Output 'Built build/windows/PocketPartner.exe'
+ Write-Output 'Built build/windows/VibeBeasts.exe'
 }finally{Pop-Location}

@@ -1,1 +1,1 @@
-{"name":"pocket-partner","version":"1.0.0","private":true,"type":"module","scripts":{"test:web":"node tests/web-core.mjs","check":"node --check dist/app.js && node --check dist/sw.js","serve":"node scripts/serve.mjs"}}
+{"name":"vibe-beasts","version":"1.0.0","private":true,"type":"module","scripts":{"test:web":"node tests/web-core.mjs","check":"node --check dist/app.js && node --check dist/sw.js && node tests/assets.mjs","serve":"node scripts/serve.mjs"}}

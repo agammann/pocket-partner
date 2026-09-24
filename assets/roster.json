@@ -1,0 +1,1296 @@
+{
+  "repository": "https://github.com/PokeAPI/pokeapi",
+  "source_commit": "2b9ea590fcc62a1bce2534835e9d5d1b234a2976",
+  "selection": "National IDs 1-151; later-generation parents excluded; original Gen 1 types",
+  "roots": [
+    1,
+    4,
+    7,
+    25,
+    133,
+    10,
+    16,
+    129,
+    63,
+    92,
+    13,
+    19,
+    21,
+    23,
+    27,
+    29,
+    32,
+    35,
+    37,
+    39,
+    41,
+    43,
+    46,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    66,
+    69,
+    72,
+    74,
+    77,
+    79,
+    81,
+    83,
+    84,
+    86,
+    88,
+    90,
+    95,
+    96,
+    98,
+    100,
+    102,
+    104,
+    106,
+    107,
+    108,
+    109,
+    111,
+    113,
+    114,
+    115,
+    116,
+    118,
+    120,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    131,
+    132,
+    137,
+    138,
+    140,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    150,
+    151
+  ],
+  "species": [
+    {
+      "id": 1,
+      "name": "Bulbasaur",
+      "type": "Grass",
+      "next": 2,
+      "stage": 0,
+      "family": 0
+    },
+    {
+      "id": 2,
+      "name": "Ivysaur",
+      "type": "Grass",
+      "next": 3,
+      "stage": 1,
+      "family": 0
+    },
+    {
+      "id": 3,
+      "name": "Venusaur",
+      "type": "Grass",
+      "next": 0,
+      "stage": 2,
+      "family": 0
+    },
+    {
+      "id": 4,
+      "name": "Charmander",
+      "type": "Fire",
+      "next": 5,
+      "stage": 0,
+      "family": 1
+    },
+    {
+      "id": 5,
+      "name": "Charmeleon",
+      "type": "Fire",
+      "next": 6,
+      "stage": 1,
+      "family": 1
+    },
+    {
+      "id": 6,
+      "name": "Charizard",
+      "type": "Fire",
+      "next": 0,
+      "stage": 2,
+      "family": 1
+    },
+    {
+      "id": 7,
+      "name": "Squirtle",
+      "type": "Water",
+      "next": 8,
+      "stage": 0,
+      "family": 2
+    },
+    {
+      "id": 8,
+      "name": "Wartortle",
+      "type": "Water",
+      "next": 9,
+      "stage": 1,
+      "family": 2
+    },
+    {
+      "id": 9,
+      "name": "Blastoise",
+      "type": "Water",
+      "next": 0,
+      "stage": 2,
+      "family": 2
+    },
+    {
+      "id": 10,
+      "name": "Caterpie",
+      "type": "Bug",
+      "next": 11,
+      "stage": 0,
+      "family": 5
+    },
+    {
+      "id": 11,
+      "name": "Metapod",
+      "type": "Bug",
+      "next": 12,
+      "stage": 1,
+      "family": 5
+    },
+    {
+      "id": 12,
+      "name": "Butterfree",
+      "type": "Bug",
+      "next": 0,
+      "stage": 2,
+      "family": 5
+    },
+    {
+      "id": 13,
+      "name": "Weedle",
+      "type": "Bug",
+      "next": 14,
+      "stage": 0,
+      "family": 10
+    },
+    {
+      "id": 14,
+      "name": "Kakuna",
+      "type": "Bug",
+      "next": 15,
+      "stage": 1,
+      "family": 10
+    },
+    {
+      "id": 15,
+      "name": "Beedrill",
+      "type": "Bug",
+      "next": 0,
+      "stage": 2,
+      "family": 10
+    },
+    {
+      "id": 16,
+      "name": "Pidgey",
+      "type": "Flying",
+      "next": 17,
+      "stage": 0,
+      "family": 6
+    },
+    {
+      "id": 17,
+      "name": "Pidgeotto",
+      "type": "Flying",
+      "next": 18,
+      "stage": 1,
+      "family": 6
+    },
+    {
+      "id": 18,
+      "name": "Pidgeot",
+      "type": "Flying",
+      "next": 0,
+      "stage": 2,
+      "family": 6
+    },
+    {
+      "id": 19,
+      "name": "Rattata",
+      "type": "Normal",
+      "next": 20,
+      "stage": 0,
+      "family": 11
+    },
+    {
+      "id": 20,
+      "name": "Raticate",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 11
+    },
+    {
+      "id": 21,
+      "name": "Spearow",
+      "type": "Normal",
+      "next": 22,
+      "stage": 0,
+      "family": 12
+    },
+    {
+      "id": 22,
+      "name": "Fearow",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 12
+    },
+    {
+      "id": 23,
+      "name": "Ekans",
+      "type": "Poison",
+      "next": 24,
+      "stage": 0,
+      "family": 13
+    },
+    {
+      "id": 24,
+      "name": "Arbok",
+      "type": "Poison",
+      "next": 0,
+      "stage": 1,
+      "family": 13
+    },
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type": "Electric",
+      "next": 26,
+      "stage": 0,
+      "family": 3
+    },
+    {
+      "id": 26,
+      "name": "Raichu",
+      "type": "Electric",
+      "next": 0,
+      "stage": 1,
+      "family": 3
+    },
+    {
+      "id": 27,
+      "name": "Sandshrew",
+      "type": "Ground",
+      "next": 28,
+      "stage": 0,
+      "family": 14
+    },
+    {
+      "id": 28,
+      "name": "Sandslash",
+      "type": "Ground",
+      "next": 0,
+      "stage": 1,
+      "family": 14
+    },
+    {
+      "id": 29,
+      "name": "Nidoran-F",
+      "type": "Poison",
+      "next": 30,
+      "stage": 0,
+      "family": 15
+    },
+    {
+      "id": 30,
+      "name": "Nidorina",
+      "type": "Poison",
+      "next": 31,
+      "stage": 1,
+      "family": 15
+    },
+    {
+      "id": 31,
+      "name": "Nidoqueen",
+      "type": "Poison",
+      "next": 0,
+      "stage": 2,
+      "family": 15
+    },
+    {
+      "id": 32,
+      "name": "Nidoran-M",
+      "type": "Poison",
+      "next": 33,
+      "stage": 0,
+      "family": 16
+    },
+    {
+      "id": 33,
+      "name": "Nidorino",
+      "type": "Poison",
+      "next": 34,
+      "stage": 1,
+      "family": 16
+    },
+    {
+      "id": 34,
+      "name": "Nidoking",
+      "type": "Poison",
+      "next": 0,
+      "stage": 2,
+      "family": 16
+    },
+    {
+      "id": 35,
+      "name": "Clefairy",
+      "type": "Normal",
+      "next": 36,
+      "stage": 0,
+      "family": 17
+    },
+    {
+      "id": 36,
+      "name": "Clefable",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 17
+    },
+    {
+      "id": 37,
+      "name": "Vulpix",
+      "type": "Fire",
+      "next": 38,
+      "stage": 0,
+      "family": 18
+    },
+    {
+      "id": 38,
+      "name": "Ninetales",
+      "type": "Fire",
+      "next": 0,
+      "stage": 1,
+      "family": 18
+    },
+    {
+      "id": 39,
+      "name": "Jigglypuff",
+      "type": "Normal",
+      "next": 40,
+      "stage": 0,
+      "family": 19
+    },
+    {
+      "id": 40,
+      "name": "Wigglytuff",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 19
+    },
+    {
+      "id": 41,
+      "name": "Zubat",
+      "type": "Poison",
+      "next": 42,
+      "stage": 0,
+      "family": 20
+    },
+    {
+      "id": 42,
+      "name": "Golbat",
+      "type": "Poison",
+      "next": 0,
+      "stage": 1,
+      "family": 20
+    },
+    {
+      "id": 43,
+      "name": "Oddish",
+      "type": "Grass",
+      "next": 44,
+      "stage": 0,
+      "family": 21
+    },
+    {
+      "id": 44,
+      "name": "Gloom",
+      "type": "Grass",
+      "next": 45,
+      "stage": 1,
+      "family": 21
+    },
+    {
+      "id": 45,
+      "name": "Vileplume",
+      "type": "Grass",
+      "next": 0,
+      "stage": 2,
+      "family": 21
+    },
+    {
+      "id": 46,
+      "name": "Paras",
+      "type": "Bug",
+      "next": 47,
+      "stage": 0,
+      "family": 22
+    },
+    {
+      "id": 47,
+      "name": "Parasect",
+      "type": "Bug",
+      "next": 0,
+      "stage": 1,
+      "family": 22
+    },
+    {
+      "id": 48,
+      "name": "Venonat",
+      "type": "Bug",
+      "next": 49,
+      "stage": 0,
+      "family": 23
+    },
+    {
+      "id": 49,
+      "name": "Venomoth",
+      "type": "Bug",
+      "next": 0,
+      "stage": 1,
+      "family": 23
+    },
+    {
+      "id": 50,
+      "name": "Diglett",
+      "type": "Ground",
+      "next": 51,
+      "stage": 0,
+      "family": 24
+    },
+    {
+      "id": 51,
+      "name": "Dugtrio",
+      "type": "Ground",
+      "next": 0,
+      "stage": 1,
+      "family": 24
+    },
+    {
+      "id": 52,
+      "name": "Meowth",
+      "type": "Normal",
+      "next": 53,
+      "stage": 0,
+      "family": 25
+    },
+    {
+      "id": 53,
+      "name": "Persian",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 25
+    },
+    {
+      "id": 54,
+      "name": "Psyduck",
+      "type": "Water",
+      "next": 55,
+      "stage": 0,
+      "family": 26
+    },
+    {
+      "id": 55,
+      "name": "Golduck",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 26
+    },
+    {
+      "id": 56,
+      "name": "Mankey",
+      "type": "Fighting",
+      "next": 57,
+      "stage": 0,
+      "family": 27
+    },
+    {
+      "id": 57,
+      "name": "Primeape",
+      "type": "Fighting",
+      "next": 0,
+      "stage": 1,
+      "family": 27
+    },
+    {
+      "id": 58,
+      "name": "Growlithe",
+      "type": "Fire",
+      "next": 59,
+      "stage": 0,
+      "family": 28
+    },
+    {
+      "id": 59,
+      "name": "Arcanine",
+      "type": "Fire",
+      "next": 0,
+      "stage": 1,
+      "family": 28
+    },
+    {
+      "id": 60,
+      "name": "Poliwag",
+      "type": "Water",
+      "next": 61,
+      "stage": 0,
+      "family": 29
+    },
+    {
+      "id": 61,
+      "name": "Poliwhirl",
+      "type": "Water",
+      "next": 62,
+      "stage": 1,
+      "family": 29
+    },
+    {
+      "id": 62,
+      "name": "Poliwrath",
+      "type": "Water",
+      "next": 0,
+      "stage": 2,
+      "family": 29
+    },
+    {
+      "id": 63,
+      "name": "Abra",
+      "type": "Psychic",
+      "next": 64,
+      "stage": 0,
+      "family": 8
+    },
+    {
+      "id": 64,
+      "name": "Kadabra",
+      "type": "Psychic",
+      "next": 65,
+      "stage": 1,
+      "family": 8
+    },
+    {
+      "id": 65,
+      "name": "Alakazam",
+      "type": "Psychic",
+      "next": 0,
+      "stage": 2,
+      "family": 8
+    },
+    {
+      "id": 66,
+      "name": "Machop",
+      "type": "Fighting",
+      "next": 67,
+      "stage": 0,
+      "family": 30
+    },
+    {
+      "id": 67,
+      "name": "Machoke",
+      "type": "Fighting",
+      "next": 68,
+      "stage": 1,
+      "family": 30
+    },
+    {
+      "id": 68,
+      "name": "Machamp",
+      "type": "Fighting",
+      "next": 0,
+      "stage": 2,
+      "family": 30
+    },
+    {
+      "id": 69,
+      "name": "Bellsprout",
+      "type": "Grass",
+      "next": 70,
+      "stage": 0,
+      "family": 31
+    },
+    {
+      "id": 70,
+      "name": "Weepinbell",
+      "type": "Grass",
+      "next": 71,
+      "stage": 1,
+      "family": 31
+    },
+    {
+      "id": 71,
+      "name": "Victreebel",
+      "type": "Grass",
+      "next": 0,
+      "stage": 2,
+      "family": 31
+    },
+    {
+      "id": 72,
+      "name": "Tentacool",
+      "type": "Water",
+      "next": 73,
+      "stage": 0,
+      "family": 32
+    },
+    {
+      "id": 73,
+      "name": "Tentacruel",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 32
+    },
+    {
+      "id": 74,
+      "name": "Geodude",
+      "type": "Rock",
+      "next": 75,
+      "stage": 0,
+      "family": 33
+    },
+    {
+      "id": 75,
+      "name": "Graveler",
+      "type": "Rock",
+      "next": 76,
+      "stage": 1,
+      "family": 33
+    },
+    {
+      "id": 76,
+      "name": "Golem",
+      "type": "Rock",
+      "next": 0,
+      "stage": 2,
+      "family": 33
+    },
+    {
+      "id": 77,
+      "name": "Ponyta",
+      "type": "Fire",
+      "next": 78,
+      "stage": 0,
+      "family": 34
+    },
+    {
+      "id": 78,
+      "name": "Rapidash",
+      "type": "Fire",
+      "next": 0,
+      "stage": 1,
+      "family": 34
+    },
+    {
+      "id": 79,
+      "name": "Slowpoke",
+      "type": "Water",
+      "next": 80,
+      "stage": 0,
+      "family": 35
+    },
+    {
+      "id": 80,
+      "name": "Slowbro",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 35
+    },
+    {
+      "id": 81,
+      "name": "Magnemite",
+      "type": "Electric",
+      "next": 82,
+      "stage": 0,
+      "family": 36
+    },
+    {
+      "id": 82,
+      "name": "Magneton",
+      "type": "Electric",
+      "next": 0,
+      "stage": 1,
+      "family": 36
+    },
+    {
+      "id": 83,
+      "name": "Farfetch'd",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 37
+    },
+    {
+      "id": 84,
+      "name": "Doduo",
+      "type": "Normal",
+      "next": 85,
+      "stage": 0,
+      "family": 38
+    },
+    {
+      "id": 85,
+      "name": "Dodrio",
+      "type": "Normal",
+      "next": 0,
+      "stage": 1,
+      "family": 38
+    },
+    {
+      "id": 86,
+      "name": "Seel",
+      "type": "Water",
+      "next": 87,
+      "stage": 0,
+      "family": 39
+    },
+    {
+      "id": 87,
+      "name": "Dewgong",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 39
+    },
+    {
+      "id": 88,
+      "name": "Grimer",
+      "type": "Poison",
+      "next": 89,
+      "stage": 0,
+      "family": 40
+    },
+    {
+      "id": 89,
+      "name": "Muk",
+      "type": "Poison",
+      "next": 0,
+      "stage": 1,
+      "family": 40
+    },
+    {
+      "id": 90,
+      "name": "Shellder",
+      "type": "Water",
+      "next": 91,
+      "stage": 0,
+      "family": 41
+    },
+    {
+      "id": 91,
+      "name": "Cloyster",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 41
+    },
+    {
+      "id": 92,
+      "name": "Gastly",
+      "type": "Ghost",
+      "next": 93,
+      "stage": 0,
+      "family": 9
+    },
+    {
+      "id": 93,
+      "name": "Haunter",
+      "type": "Ghost",
+      "next": 94,
+      "stage": 1,
+      "family": 9
+    },
+    {
+      "id": 94,
+      "name": "Gengar",
+      "type": "Ghost",
+      "next": 0,
+      "stage": 2,
+      "family": 9
+    },
+    {
+      "id": 95,
+      "name": "Onix",
+      "type": "Rock",
+      "next": 0,
+      "stage": 0,
+      "family": 42
+    },
+    {
+      "id": 96,
+      "name": "Drowzee",
+      "type": "Psychic",
+      "next": 97,
+      "stage": 0,
+      "family": 43
+    },
+    {
+      "id": 97,
+      "name": "Hypno",
+      "type": "Psychic",
+      "next": 0,
+      "stage": 1,
+      "family": 43
+    },
+    {
+      "id": 98,
+      "name": "Krabby",
+      "type": "Water",
+      "next": 99,
+      "stage": 0,
+      "family": 44
+    },
+    {
+      "id": 99,
+      "name": "Kingler",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 44
+    },
+    {
+      "id": 100,
+      "name": "Voltorb",
+      "type": "Electric",
+      "next": 101,
+      "stage": 0,
+      "family": 45
+    },
+    {
+      "id": 101,
+      "name": "Electrode",
+      "type": "Electric",
+      "next": 0,
+      "stage": 1,
+      "family": 45
+    },
+    {
+      "id": 102,
+      "name": "Exeggcute",
+      "type": "Grass",
+      "next": 103,
+      "stage": 0,
+      "family": 46
+    },
+    {
+      "id": 103,
+      "name": "Exeggutor",
+      "type": "Grass",
+      "next": 0,
+      "stage": 1,
+      "family": 46
+    },
+    {
+      "id": 104,
+      "name": "Cubone",
+      "type": "Ground",
+      "next": 105,
+      "stage": 0,
+      "family": 47
+    },
+    {
+      "id": 105,
+      "name": "Marowak",
+      "type": "Ground",
+      "next": 0,
+      "stage": 1,
+      "family": 47
+    },
+    {
+      "id": 106,
+      "name": "Hitmonlee",
+      "type": "Fighting",
+      "next": 0,
+      "stage": 0,
+      "family": 48
+    },
+    {
+      "id": 107,
+      "name": "Hitmonchan",
+      "type": "Fighting",
+      "next": 0,
+      "stage": 0,
+      "family": 49
+    },
+    {
+      "id": 108,
+      "name": "Lickitung",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 50
+    },
+    {
+      "id": 109,
+      "name": "Koffing",
+      "type": "Poison",
+      "next": 110,
+      "stage": 0,
+      "family": 51
+    },
+    {
+      "id": 110,
+      "name": "Weezing",
+      "type": "Poison",
+      "next": 0,
+      "stage": 1,
+      "family": 51
+    },
+    {
+      "id": 111,
+      "name": "Rhyhorn",
+      "type": "Ground",
+      "next": 112,
+      "stage": 0,
+      "family": 52
+    },
+    {
+      "id": 112,
+      "name": "Rhydon",
+      "type": "Ground",
+      "next": 0,
+      "stage": 1,
+      "family": 52
+    },
+    {
+      "id": 113,
+      "name": "Chansey",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 53
+    },
+    {
+      "id": 114,
+      "name": "Tangela",
+      "type": "Grass",
+      "next": 0,
+      "stage": 0,
+      "family": 54
+    },
+    {
+      "id": 115,
+      "name": "Kangaskhan",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 55
+    },
+    {
+      "id": 116,
+      "name": "Horsea",
+      "type": "Water",
+      "next": 117,
+      "stage": 0,
+      "family": 56
+    },
+    {
+      "id": 117,
+      "name": "Seadra",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 56
+    },
+    {
+      "id": 118,
+      "name": "Goldeen",
+      "type": "Water",
+      "next": 119,
+      "stage": 0,
+      "family": 57
+    },
+    {
+      "id": 119,
+      "name": "Seaking",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 57
+    },
+    {
+      "id": 120,
+      "name": "Staryu",
+      "type": "Water",
+      "next": 121,
+      "stage": 0,
+      "family": 58
+    },
+    {
+      "id": 121,
+      "name": "Starmie",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 58
+    },
+    {
+      "id": 122,
+      "name": "Mr. Mime",
+      "type": "Psychic",
+      "next": 0,
+      "stage": 0,
+      "family": 59
+    },
+    {
+      "id": 123,
+      "name": "Scyther",
+      "type": "Bug",
+      "next": 0,
+      "stage": 0,
+      "family": 60
+    },
+    {
+      "id": 124,
+      "name": "Jynx",
+      "type": "Ice",
+      "next": 0,
+      "stage": 0,
+      "family": 61
+    },
+    {
+      "id": 125,
+      "name": "Electabuzz",
+      "type": "Electric",
+      "next": 0,
+      "stage": 0,
+      "family": 62
+    },
+    {
+      "id": 126,
+      "name": "Magmar",
+      "type": "Fire",
+      "next": 0,
+      "stage": 0,
+      "family": 63
+    },
+    {
+      "id": 127,
+      "name": "Pinsir",
+      "type": "Bug",
+      "next": 0,
+      "stage": 0,
+      "family": 64
+    },
+    {
+      "id": 128,
+      "name": "Tauros",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 65
+    },
+    {
+      "id": 129,
+      "name": "Magikarp",
+      "type": "Water",
+      "next": 130,
+      "stage": 0,
+      "family": 7
+    },
+    {
+      "id": 130,
+      "name": "Gyarados",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 7
+    },
+    {
+      "id": 131,
+      "name": "Lapras",
+      "type": "Water",
+      "next": 0,
+      "stage": 0,
+      "family": 66
+    },
+    {
+      "id": 132,
+      "name": "Ditto",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 67
+    },
+    {
+      "id": 133,
+      "name": "Eevee",
+      "type": "Normal",
+      "next": 134,
+      "stage": 0,
+      "family": 4
+    },
+    {
+      "id": 134,
+      "name": "Vaporeon",
+      "type": "Water",
+      "next": 0,
+      "stage": 1,
+      "family": 4
+    },
+    {
+      "id": 135,
+      "name": "Jolteon",
+      "type": "Electric",
+      "next": 0,
+      "stage": 1,
+      "family": 4
+    },
+    {
+      "id": 136,
+      "name": "Flareon",
+      "type": "Fire",
+      "next": 0,
+      "stage": 1,
+      "family": 4
+    },
+    {
+      "id": 137,
+      "name": "Porygon",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 68
+    },
+    {
+      "id": 138,
+      "name": "Omanyte",
+      "type": "Rock",
+      "next": 139,
+      "stage": 0,
+      "family": 69
+    },
+    {
+      "id": 139,
+      "name": "Omastar",
+      "type": "Rock",
+      "next": 0,
+      "stage": 1,
+      "family": 69
+    },
+    {
+      "id": 140,
+      "name": "Kabuto",
+      "type": "Rock",
+      "next": 141,
+      "stage": 0,
+      "family": 70
+    },
+    {
+      "id": 141,
+      "name": "Kabutops",
+      "type": "Rock",
+      "next": 0,
+      "stage": 1,
+      "family": 70
+    },
+    {
+      "id": 142,
+      "name": "Aerodactyl",
+      "type": "Rock",
+      "next": 0,
+      "stage": 0,
+      "family": 71
+    },
+    {
+      "id": 143,
+      "name": "Snorlax",
+      "type": "Normal",
+      "next": 0,
+      "stage": 0,
+      "family": 72
+    },
+    {
+      "id": 144,
+      "name": "Articuno",
+      "type": "Ice",
+      "next": 0,
+      "stage": 0,
+      "family": 73
+    },
+    {
+      "id": 145,
+      "name": "Zapdos",
+      "type": "Electric",
+      "next": 0,
+      "stage": 0,
+      "family": 74
+    },
+    {
+      "id": 146,
+      "name": "Moltres",
+      "type": "Fire",
+      "next": 0,
+      "stage": 0,
+      "family": 75
+    },
+    {
+      "id": 147,
+      "name": "Dratini",
+      "type": "Dragon",
+      "next": 148,
+      "stage": 0,
+      "family": 76
+    },
+    {
+      "id": 148,
+      "name": "Dragonair",
+      "type": "Dragon",
+      "next": 149,
+      "stage": 1,
+      "family": 76
+    },
+    {
+      "id": 149,
+      "name": "Dragonite",
+      "type": "Dragon",
+      "next": 0,
+      "stage": 2,
+      "family": 76
+    },
+    {
+      "id": 150,
+      "name": "Mewtwo",
+      "type": "Psychic",
+      "next": 0,
+      "stage": 0,
+      "family": 77
+    },
+    {
+      "id": 151,
+      "name": "Mew",
+      "type": "Psychic",
+      "next": 0,
+      "stage": 0,
+      "family": 78
+    }
+  ]
+}

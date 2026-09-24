@@ -1,12 +1,12 @@
-# Pocket Partner
+# Vibe Beasts
 
 A little partner. A long adventure.
 
 A free, unofficial Pokémon virtual pet by **agammann**, with original Pokémon Yellow sprites, short turn-based battles, and a C++ game engine shared by the browser and Windows versions.
 
-**[Play in your browser](https://pocket-partner.alx21.chatgpt.site)** · **[Download for Windows](https://github.com/agammann/pocket-partner/releases/latest/download/Pocket-Partner-Windows.zip)** · [Build from source](BUILD.md)
+**[Play in your browser](https://vibe-beasts.alx21.chatgpt.site)** · **[Download for Windows](https://github.com/agammann/vibe-beasts/releases/latest/download/Vibe-Beasts-Windows.zip)** · [Build from source](BUILD.md)
 
-![Pocket Partner Windows edition](docs/windows-preview.png)
+![Vibe Beasts Windows edition](docs/windows-preview.png)
 
 ## Play
 
@@ -14,7 +14,7 @@ A free, unofficial Pokémon virtual pet by **agammann**, with original Pokémon 
 
 **Windows 10/11, 64-bit:** download the release ZIP, extract the entire folder, and double-click **Play.cmd**. No compiler, account or internet connection is needed. Optional: **Install.cmd** copies the app into your local application folder, creates a desktop shortcut and launches it. The installer needs no administrator access. Release executables are unsigned; Windows may show its normal download/reputation prompt.
 
-The source-code ZIP is for rebuilding; choose **Pocket-Partner-Windows.zip** for the ready-to-play game.
+The source-code ZIP is for rebuilding; choose **Vibe-Beasts-Windows.zip** for the ready-to-play game.
 
 ## Your first adventure
 
@@ -33,22 +33,15 @@ First-stage evolution needs **60 battle XP**; the next stage needs **160 battle 
 
 Care meters never block or change evolution. There is no death or punishment for leaving. Your partner will wait. Evolution is voluntary and can be delayed indefinitely. Branch choices are permanent within a save.
 
-These are custom fan-game rules, not a simulation of any official Pokémon game. Battles use a simplified single-type chart. This release contains **10 playable families and 32 discoverable species**, including three opponent-only Pokémon (Weedle, Kakuna and Beedrill); it is not a complete 151-species game. Kakuna is discovered in the Grove.
+These are custom fan-game rules, not a simulation of an official Pokémon game. Battles use a simplified single-type chart. **All 151 original Pokémon** are discoverable and playable across **79 partner families**, using only Pokémon Yellow sprites. No beta, prototype, glitch or later-generation Pokémon are included.
 
-| Partner family | Wins to unlock |
-| --- | ---: |
-| Bulbasaur, Charmander, Squirtle, Pikachu, Eevee | 0 |
-| Caterpie | 2 |
-| Pidgey | 4 |
-| Magikarp | 7 |
-| Abra | 10 |
-| Gastly | 14 |
+The first five families are available immediately. Caterpie unlocks at 2 wins, Pidgey at 4, Magikarp at 7, Abra at 10, and Gastly at 14. Other families unlock progressively from 2 to 24 wins. The selector shows each requirement. Every species can appear in the League, unlocked at 15 wins. Pokémon without a Gen 1 evolution remain in their original form.
 
 ## Saves
 
-The browser saves to this browser’s local storage. Windows saves to `%LOCALAPPDATA%\PocketPartner\partner.save`. Saves include active battles. There are no accounts or automatic cloud synchronization.
+The browser saves to this browser’s local storage. Windows saves to `%LOCALAPPDATA%\VibeBeasts\partner.save`. Saves include active battles. There are no accounts or automatic cloud synchronization.
 
-Use **Game & saves → Export save** to make a backup or move between editions. In the browser, **Import save** selects a `.save` file and asks before replacing progress. On Windows, export writes `Pocket-Partner-export.save` beside the executable; drag a `.save` file onto the window to import, then confirm. The save format is shared across both builds.
+Use **Game & saves → Export save** to make a backup or move between editions. In the browser, **Import save** selects a `.save` file and asks before replacing progress. On Windows, export writes `Vibe-Beasts-export.save` beside the executable; drag a `.save` file onto the window to import, then confirm. The save format is shared across both builds.
 
 Clearing browser data can erase your browser save and offline files. Keep exported backups. Like other local single-player games, saves are editable and are not intended for competitive rankings.
 
@@ -62,4 +55,4 @@ Pokémon names and artwork belong to their respective rights holders. This is an
 
 ## Removing the Windows app
 
-The portable edition can be removed by deleting its extracted folder. For an installed copy, remove `%LOCALAPPDATA%\PocketPartner\app` and the **Pocket Partner** desktop shortcut. Your save remains in `%LOCALAPPDATA%\PocketPartner`; remove that folder only if you also want to erase progress.
+The portable edition can be removed by deleting its extracted folder. For an installed copy, remove `%LOCALAPPDATA%\VibeBeasts\app` and the **Vibe Beasts** desktop shortcut. Your save remains in `%LOCALAPPDATA%\VibeBeasts`; remove that folder only if you also want to erase progress.
